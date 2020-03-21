@@ -14,3 +14,11 @@ steps:
     echo Starting the build
     ./gradlew build
   displayName: 'Build with Gradle'
+
+- script: |
+    echo Testing
+    ./gradlew test
+
+- script: |
+    echo Executing
+    ./gradlew run
