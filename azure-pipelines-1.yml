@@ -18,16 +18,16 @@ steps:
 - script: |
     echo Testing
     ./gradlew test
-    displayName: 'Test'
+  displayName: 'Test'
 
 - script: |
     echo Executing
     ./gradlew run
-    displayName: 'Run'
+  displayName: 'Run'
 
 - script: |
     echo Publishing
     ./gradlew publish
-    displayName: 'Publish'
+  displayName: 'Publish'
 
 
