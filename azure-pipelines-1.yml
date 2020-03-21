@@ -13,12 +13,21 @@ steps:
 - script: |
     echo Starting the build
     ./gradlew build
-  displayName: 'Build with Gradle'
+  displayName: 'Build'
 
 - script: |
     echo Testing
     ./gradlew test
+    displayName: 'Test'
 
 - script: |
     echo Executing
     ./gradlew run
+    displayName: 'Run'
+
+- script: |
+    echo Publishing
+    ./gradlew publish
+    displayName: 'Publish'
+
+
