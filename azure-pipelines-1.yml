@@ -25,9 +25,14 @@ steps:
     ./gradlew run
   displayName: 'Run'
 
-- script: |
-    echo Publishing
-    ./gradlew publish
-  displayName: 'Publish'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'App'
+    publishLocation: 'Container'
 
 
