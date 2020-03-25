@@ -6,28 +6,36 @@
  * User Manual available at https://docs.gradle.org/6.2.1/userguide/tutorial_java_projects.html
  */
 
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
-
-    id "com.palantir.jacoco-coverage" version "0.4.0"
+    
+    id "org.myire.quill.jacoco" version "2.3"
+    id 'com.github.spotbugs' version '4.0.4'
+    id 'org.myire.quill.spotbugs' version '2.3'
+    id "org.myire.quill.pmd" version "2.3"
+    id "org.myire.quill.cpd" version "2.3"
+    id "org.myire.quill.checkstyle" version "2.3"
+    id "org.myire.quill.scent" version "2.3"
 }
 
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenCentral()
+    //google() # Android
 }
 
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.1-jre'
-
+    
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    
 }
 
 application {
@@ -44,4 +52,3 @@ jar {
     )
   }
 }
-
